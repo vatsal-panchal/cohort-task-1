@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 600px;
+}
+
+/* LEFT SECTION */
+
+.left-section {
+    position: relative;
+    background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Header */
+
+.header {
+    position: relative;
+    z-index: 10;
+}
+
+.pokemon-logo {
+    font-size: 28px;
+    font-weight: 900;
+    background: linear-gradient(45deg, #1F2937, #4B5563);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.gen-label {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #374151;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Main Title */
+
+.title {
+    position: relative;
+    z-index: 10;
+    font-size: 80px;
+    font-weight: 900;
+    color: #1F2937;
+    line-height: 1;
+    margin: 20px 0;
+    letter-spacing: -2px;
+}
+
+/* Description */
+
+.description {
+    position: relative;
+    z-index: 10;
+    font-size: 16px;
+    color: #4B5563;
+    line-height: 1.8;
+    max-width: 85%;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+/* Counter */
+
+.counter {
+    position: relative;
+    z-index: 10;
+    font-size: 14px;
+    color: #6B7280;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    border-top: 2px solid #D1D5DB;
+    display: inline-block;
+}
+
+/* Decorative Circle */
+
+.circle-decoration {
+    position: absolute;
+    bottom: 0;
+    left: -50px;
+    width: 300px;
+    height: 300px;
+    border: 8px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* RIGHT SECTION */
+
+.right-section {
+    position: relative;
+    background: linear-gradient(135deg, #FEF3C7 0%, #FFF7ED 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    overflow: hidden;
+}
+
+/* Pikachu */
+
+.pikachu-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.pikachu-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* Dots */
+
+.indicator-dots {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 10;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #FCD34D;
+    border: 2px solid #F59E0B;
+    transition: transform 0.3s ease;
+}
+
+.dot:first-child {
+    transform: scale(1.3);
+    background: #F59E0B;
+}
+
+.dot:hover {
+    transform: scale(1.2);
+}
+
+/* Top Bar */
+
+.top-bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 20;
+    box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.menu-icon {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-line {
+    width: 100%;
+    height: 3px;
+    background: #1A1A1A;
+    border-radius: 2px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .left-section {
+        padding: 40px 30px;
+        min-height: 400px;
+    }
+
+    .right-section {
+        min-height: 350px;
+    }
+
+    .title {
+        font-size: 50px;
+    }
+
+    .pikachu {
+        width: 200px;
+        height: 200px;
+    }
+
+    .indicator-dots {
+        right: 20px;
+    }
+
+    .top-bar {
+        border-radius: 0;
+        padding: 10px 15px;
+    }
+}
